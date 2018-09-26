@@ -29,6 +29,8 @@ public class MathCalculator extends CordovaPlugin {
     
     private CallbackContext callbackContext = null;
     private static String TAG = "PosDemo";
+    private Settings setting;
+
     
 
     @Override
