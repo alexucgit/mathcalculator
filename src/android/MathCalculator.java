@@ -40,7 +40,7 @@ public class MathCalculator extends CordovaPlugin {
     
     private MposHandler handler;
     private Settings setting;
-    private static Context context;
+    private Context context;
     protected boolean ioutP = false;
     
 
@@ -48,10 +48,11 @@ public class MathCalculator extends CordovaPlugin {
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
         if(action.equals("add")) {
          
+         context=this;
         // Init SDK,call singleton function,so that you can keeping on the
         // connect in the whole life cycle
         // handler = MposHandler.getInstance(this);
-        handler = MposHandler.getInstance(context.getApplicationContext(), PosModel.Z91);
+        handler = MposHandler.getInstance(context, PosModel.Z91);
 
         setting = Settings.getInstance(handler);
         // power on the device when you need to read card or print
