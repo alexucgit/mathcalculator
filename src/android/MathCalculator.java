@@ -36,7 +36,7 @@ import java.util.concurrent.TimeUnit;
  * This class echoes a string called from JavaScript.
  */
 @SuppressLint("HandlerLeak")
-public class MathCalculator extends CordovaPlugin implements SwipeListener {
+public class MathCalculator extends CordovaPlugin {
     
     private MposHandler handler;
     private Settings setting;
