@@ -28,8 +28,8 @@ public class MathCalculator extends CordovaPlugin {
             Settings setting = Settings.getInstance(handler);
             setting.mPosPowerOn();
             
-            settings.prnStr("ciao");
-            settings.prnStart();
+            setting.prnStr("ciao");
+            setting.prnStart();
 
             this.add(args, callbackContext);
             return true;
