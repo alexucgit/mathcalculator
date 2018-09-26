@@ -149,32 +149,7 @@ public class MathCalculator extends CordovaPlugin {
         }
     };
 
-    @Override
-    public void onDisconnected(SwipeEvent swipeEvent) {
-
-    }
-
-    @Override
-    public void onConnected(SwipeEvent swipeEvent) {
-
-    }
-
-    @Override
-    public void onStarted(SwipeEvent swipeEvent) {
-
-    }
-
-    @Override
-    public void onStopped(SwipeEvent swipeEvent) {
-
-    }
-
-    @Override
-    public void onReadData(SwipeEvent swipeEvent) {
-
-    }
-
-    @Override
+    
     public void onParseData(SwipeEvent swipeEvent) {
 
         Log.i("xtztt", "" + swipeEvent.getValue());
@@ -187,17 +162,6 @@ public class MathCalculator extends CordovaPlugin {
         }
     }
 
-    @Override
-    public void onPermission(SwipeEvent swipeEvent) {
-
-    }
-
-    @Override
-    public void onCardDetect(CardDetected cardDetected) {
-
-    }
-
-    @Override
     public void onPrintStatus(PrintStatus printStatus) {
 
         if (printStatus.equals(PrintStatus.IMAGES)) {
@@ -206,10 +170,5 @@ public class MathCalculator extends CordovaPlugin {
         } else if (printStatus.equals(PrintStatus.EXIT)) {
             sendMessage("device exit print!");
         }
-    }
-
-    @Override
-    public void onEmvStatus(EmvStatus emvStatus) {
-
     }
 }
