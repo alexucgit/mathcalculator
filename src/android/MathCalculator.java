@@ -28,7 +28,6 @@ import static android.app.Activity.RESULT_OK;
 public class MathCalculator extends CordovaPlugin {
     
     private CallbackContext callbackContext = null;
-    private static String TAG = "PosDemo";
     private Settings setting;
     private Context context;
 
