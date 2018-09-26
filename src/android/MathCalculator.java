@@ -14,14 +14,20 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.bluetooth.BluetoothDevice;
+import android.content.Intent;
+
+import java.util.UUID;
+import java.util.concurrent.TimeUnit;
+ 
+import static android.app.Activity.RESULT_OK;
+
 /**
  * This class echoes a string called from JavaScript.
  */
 public class MathCalculator extends CordovaPlugin {
     
-    private Context context;
-    private Settings setting;
-    private MposHandler handler;
+    private CallbackContext callbackContext = null;
     private static String TAG = "PosDemo";
     
 
@@ -29,10 +35,14 @@ public class MathCalculator extends CordovaPlugin {
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
         if(action.equals("add")) {
             
-            Handler mHandler = new Handler();
+            this.callbackContext = callbackContext;
             
-            handler = MposHandler.getInstance(context);
-            setting = Settings.getInstance(handler);
+            final Activity activity = this.cordova.getActivity();
+            final MposHandler mPOSHandler = MposHandler.getInstance();
+ 
+            cordova.setActivityResultCallback(MathCalculator.this);
+            
+            setting = Settings.getInstance(mPOSHandler);
             setting.mPosPowerOn();
             
             setting.prnStr("ciao");
