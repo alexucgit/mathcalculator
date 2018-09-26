@@ -24,8 +24,10 @@ public class MathCalculator extends CordovaPlugin {
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
         if(action.equals("add")) {
             
-            MposHandler mposHandler = MposHandler.getInstance(this);
-            Settings settings = Settings.getInstance(mposHandler);
+            MposHandler handler = MposHandler.getInstance(context);
+            Settings setting = Settings.getInstance(handler);
+            setting.mPosPowerOn();
+            
             settings.prnStr("ciao");
             settings.prnStart();
 
