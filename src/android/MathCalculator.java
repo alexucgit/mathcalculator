@@ -31,10 +31,9 @@ public class MathCalculator extends CordovaPlugin {
             
             Handler mHandler = new Handler();
             
-            Mhandler = MposHandler.getInstance(context);
+            handler = MposHandler.getInstance(context);
             setting = Settings.getInstance(handler);
             setting.mPosPowerOn();
-            handler.addSwipeListener(context);
             
             setting.prnStr("ciao");
             setting.prnStart();
