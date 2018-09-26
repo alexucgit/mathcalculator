@@ -10,7 +10,6 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -36,6 +35,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * This class echoes a string called from JavaScript.
  */
+@SuppressLint("HandlerLeak")
 public class MathCalculator extends CordovaPlugin implements SwipeListener {
     
     private MposHandler handler;
@@ -123,7 +123,93 @@ public class MathCalculator extends CordovaPlugin implements SwipeListener {
         }
     }
  
-  protected void sendMessage(String string) {
+    protected void sendMessage(String string) {
         Log.i("xtztt", "==>:" + string);
-}
+    }
+ 
+     private void showToast(String mesg) {
+        Message mssg = new Message();
+        mssg.what = 10;
+        mssg.obj = "" + mesg;
+        handleros.sendMessage(mssg);
+    }
+
+    Handler handleros = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            switch (msg.what) {
+                case 10:
+                    Toast.makeText(getApplicationContext(), (String) msg.obj, Toast.LENGTH_SHORT)
+                            .show();
+                    break;
+
+                default:
+                    break;
+            }
+        }
+    };
+
+    @Override
+    public void onDisconnected(SwipeEvent swipeEvent) {
+
+    }
+
+    @Override
+    public void onConnected(SwipeEvent swipeEvent) {
+
+    }
+
+    @Override
+    public void onStarted(SwipeEvent swipeEvent) {
+
+    }
+
+    @Override
+    public void onStopped(SwipeEvent swipeEvent) {
+
+    }
+
+    @Override
+    public void onReadData(SwipeEvent swipeEvent) {
+
+    }
+
+    @Override
+    public void onParseData(SwipeEvent swipeEvent) {
+
+        Log.i("xtztt", "" + swipeEvent.getValue());
+        // 45584954205052494e54 打印缺纸
+        if ((!ioutP) && "4e4f205041504552".equals(swipeEvent.getValue())) {
+            ioutP = true;
+            showToast(""
+                    + getApplicationContext().getResources().getText(
+                    R.string.out_of_paper));
+        }
+    }
+
+    @Override
+    public void onPermission(SwipeEvent swipeEvent) {
+
+    }
+
+    @Override
+    public void onCardDetect(CardDetected cardDetected) {
+
+    }
+
+    @Override
+    public void onPrintStatus(PrintStatus printStatus) {
+
+        if (printStatus.equals(PrintStatus.IMAGES)) {
+            // settings.mPosExitPrint();
+            sendMessage("images print finish!");
+        } else if (printStatus.equals(PrintStatus.EXIT)) {
+            sendMessage("device exit print!");
+        }
+    }
+
+    @Override
+    public void onEmvStatus(EmvStatus emvStatus) {
+
+    }
 }
