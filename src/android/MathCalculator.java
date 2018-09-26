@@ -51,7 +51,7 @@ public class MathCalculator extends CordovaPlugin {
         // Init SDK,call singleton function,so that you can keeping on the
         // connect in the whole life cycle
         // handler = MposHandler.getInstance(this);
-        handler = MposHandler.getInstance(Context.getApplicationContext(), PosModel.Z91);
+        handler = MposHandler.getInstance(context.getApplicationContext(), PosModel.Z91);
 
         setting = Settings.getInstance(handler);
         // power on the device when you need to read card or print
@@ -127,48 +127,4 @@ public class MathCalculator extends CordovaPlugin {
         Log.i("xtztt", "==>:" + string);
     }
  
-     private void showToast(String mesg) {
-        Message mssg = new Message();
-        mssg.what = 10;
-        mssg.obj = "" + mesg;
-        handleros.sendMessage(mssg);
-    }
-
-    Handler handleros = new Handler() {
-        @Override
-        public void handleMessage(Message msg) {
-            switch (msg.what) {
-                case 10:
-                    Toast.makeText(getApplicationContext(), (String) msg.obj, Toast.LENGTH_SHORT)
-                            .show();
-                    break;
-
-                default:
-                    break;
-            }
-        }
-    };
-
-    
-    public void onParseData(SwipeEvent swipeEvent) {
-
-        Log.i("xtztt", "" + swipeEvent.getValue());
-        // 45584954205052494e54 打印缺纸
-        if ((!ioutP) && "4e4f205041504552".equals(swipeEvent.getValue())) {
-            ioutP = true;
-            showToast(""
-                    + getApplicationContext().getResources().getText(
-                    R.string.out_of_paper));
-        }
-    }
-
-    public void onPrintStatus(PrintStatus printStatus) {
-
-        if (printStatus.equals(PrintStatus.IMAGES)) {
-            // settings.mPosExitPrint();
-            sendMessage("images print finish!");
-        } else if (printStatus.equals(PrintStatus.EXIT)) {
-            sendMessage("device exit print!");
-        }
-    }
 }
