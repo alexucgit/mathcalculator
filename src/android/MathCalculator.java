@@ -51,7 +51,7 @@ public class MathCalculator extends CordovaPlugin {
         // Init SDK,call singleton function,so that you can keeping on the
         // connect in the whole life cycle
         // handler = MposHandler.getInstance(this);
-        handler = MposHandler.getInstance(getApplicationContext(), PosModel.Z91);
+        handler = MposHandler.getInstance(Context.getApplicationContext(), PosModel.Z91);
 
         setting = Settings.getInstance(handler);
         // power on the device when you need to read card or print
