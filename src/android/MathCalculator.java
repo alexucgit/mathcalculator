@@ -30,7 +30,7 @@ public class MathCalculator extends CordovaPlugin {
     private CallbackContext callbackContext = null;
     private static String TAG = "PosDemo";
     private Settings setting;
- private Context context;
+    private Context context;
 
     
 
@@ -42,6 +42,7 @@ public class MathCalculator extends CordovaPlugin {
             
             final Activity activity = this.cordova.getActivity();
             final MposHandler mPOSHandler = MposHandler.getInstance(context);
+            mPOSHandler.connect();
  
             cordova.setActivityResultCallback(MathCalculator.this);
             
