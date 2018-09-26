@@ -122,4 +122,8 @@ public class MathCalculator extends CordovaPlugin implements SwipeListener {
             callback.error("Something went wrong");
         }
     }
+ 
+  protected void sendMessage(String string) {
+        Log.i("xtztt", "==>:" + string);
+}
 }
