@@ -4,49 +4,77 @@ package com.dylee.plugin.mathcalculator;
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;
 
-import com.imagpay.mpos.MposHandler;
-import com.imagpay.Settings;
-import android.app.Activity;
+import android.annotation.SuppressLint;
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Handler;
+import android.os.Message;
+import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
+import android.widget.Toast;
+
+import com.imagpay.Settings;
+import com.imagpay.SwipeEvent;
+import com.imagpay.SwipeListener;
+import com.imagpay.enums.CardDetected;
+import com.imagpay.enums.EmvStatus;
+import com.imagpay.enums.PosModel;
+import com.imagpay.enums.PrintStatus;
+import com.imagpay.mpos.MposHandler;
+
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import android.bluetooth.BluetoothDevice;
-import android.content.Intent;
-
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
  
-import static android.app.Activity.RESULT_OK;
+
 
 /**
  * This class echoes a string called from JavaScript.
  */
-public class MathCalculator extends CordovaPlugin {
+public class MathCalculator extends CordovaPlugin implements SwipeListener {
     
-    private CallbackContext callbackContext = null;
+    private MposHandler handler;
     private Settings setting;
-    private Context context;
-
+    private static Context context;
+    protected boolean ioutP = false;
     
 
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
         if(action.equals("add")) {
-            
-            this.callbackContext = callbackContext;
-            
-            final Activity activity = this.cordova.getActivity();
-            final MposHandler mPOSHandler = MposHandler.getInstance(context);
-            mPOSHandler.connect();
- 
-            cordova.setActivityResultCallback(MathCalculator.this);
-            
-            setting = Settings.getInstance(mPOSHandler);
-            setting.mPosPowerOn();
+         
+        // Init SDK,call singleton function,so that you can keeping on the
+        // connect in the whole life cycle
+        // handler = MposHandler.getInstance(this);
+        handler = MposHandler.getInstance(getApplicationContext(), PosModel.Z91);
+
+        setting = Settings.getInstance(handler);
+        // power on the device when you need to read card or print
+        setting.mPosPowerOn();
+        try {
+            // for Z90,delay 1S and then connect
+            // Thread.sleep(1000);
+            // connect device via serial port
+            if (!handler.isConnected()) {
+                sendMessage("Connect Res:" + handler.connect());
+            } else {
+                handler.close();
+                sendMessage("ReConnect Res:" + handler.connect());
+            }
+        } catch (Exception e) {
+            sendMessage(e.getMessage());
+
+        }
+        // add linstener for connection
+        handler.addSwipeListener(this);
+        // add linstener for read IC chip card
+        // handler.addEMVListener(this);
+         
             
             setting.prnStr("ciao");
             setting.prnStart();
