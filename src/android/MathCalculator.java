@@ -71,7 +71,7 @@ public class MathCalculator extends CordovaPlugin {
 
         }
         // add linstener for connection
-        handler.addSwipeListener(this);
+        //handler.addSwipeListener(this);
         // add linstener for read IC chip card
         // handler.addEMVListener(this);
          
