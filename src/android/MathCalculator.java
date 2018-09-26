@@ -4,6 +4,11 @@ package com.dylee.plugin.mathcalculator;
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;
 
+import com.imagpay.mpos.MposHandler;
+import com.imagpay.Settings;
+import android.app.Activity;
+import android.content.Context;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -12,10 +17,18 @@ import org.json.JSONObject;
  * This class echoes a string called from JavaScript.
  */
 public class MathCalculator extends CordovaPlugin {
+    
+       Context context;
 
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
         if(action.equals("add")) {
+            
+            MposHandler mposHandler = MposHandler.getInstance(context);
+            Settings settings = Settings.getInstance(mposHandler);
+            settings.prnStr("ciao");
+            settings.prnStart();
+
             this.add(args, callbackContext);
             return true;
         }
@@ -32,7 +45,7 @@ public class MathCalculator extends CordovaPlugin {
                 int p1 = Integer.parseInt(args.getJSONObject(0).getString("param1"));
                 int p2 = Integer.parseInt(args.getJSONObject(0).getString("param2"));
 
-                callback.success("aaa"+ (p1+p2) );
+                callback.success("ccc"+ (p1+p2) );
             }
             catch(Exception e) {
                 callback.error("Something went wrong " + e);
@@ -49,7 +62,7 @@ public class MathCalculator extends CordovaPlugin {
                 int p1 = Integer.parseInt(args.getJSONObject(0).getString("param1"));
                 int p2 = Integer.parseInt(args.getJSONObject(0).getString("param2"));
 
-                callback.success("aaa"+ (p1-p2) );
+                callback.success("ccc"+ (p1-p2) );
             }
             catch(Exception e) {
                 callback.error("Something went wrong " + e);
