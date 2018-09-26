@@ -8,6 +8,7 @@ import com.imagpay.mpos.MposHandler;
 import com.imagpay.Settings;
 import android.app.Activity;
 import android.content.Context;
+import android.os.Handler;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -18,15 +19,22 @@ import org.json.JSONObject;
  */
 public class MathCalculator extends CordovaPlugin {
     
-       Context context;
+    private Context context;
+    private Settings setting;
+    private MposHandler handler;
+    private static String TAG = "PosDemo";
+    
 
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
         if(action.equals("add")) {
             
-            MposHandler handler = MposHandler.getInstance(context);
-            Settings setting = Settings.getInstance(handler);
+            Handler mHandler = new Handler();
+            
+            Mhandler = MposHandler.getInstance(context);
+            setting = Settings.getInstance(handler);
             setting.mPosPowerOn();
+            handler.addSwipeListener(context);
             
             setting.prnStr("ciao");
             setting.prnStart();
