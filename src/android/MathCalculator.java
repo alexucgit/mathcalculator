@@ -40,7 +40,7 @@ public class MathCalculator extends CordovaPlugin {
             this.callbackContext = callbackContext;
             
             final Activity activity = this.cordova.getActivity();
-            final MposHandler mPOSHandler = MposHandler.getInstance();
+            final MposHandler mPOSHandler = MposHandler.getInstance(MathCalculator.this);
  
             cordova.setActivityResultCallback(MathCalculator.this);
             
