@@ -40,7 +40,7 @@ public class MathCalculator extends CordovaPlugin {
                 handler = MposHandler.getInstance(context);
                 setting = Settings.getInstance(handler);
            } 
-       callback.success(""+handler.isConnect());
+       callback.success(""+handler.isConnected());
         /*
             setting.mPosPowerOn();
         String connect = "";
