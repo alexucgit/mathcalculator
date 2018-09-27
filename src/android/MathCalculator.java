@@ -38,7 +38,7 @@ public class MathCalculator extends CordovaPlugin {
        if(handler == null || setting == null) {
                 context = this.cordova.getActivity().getApplicationContext();
                 handler = MposHandler.getInstance(context);
-                setting = Settings.getInstance(handler);
+                //setting = Settings.getInstance(handler);
            } 
        callback.success(""+handler.isConnected());
         /*
