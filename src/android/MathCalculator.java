@@ -44,6 +44,6 @@ public class MathCalculator extends CordovaPlugin {
             setting.prnStr("This class echoes a string called from JavaScript.");
             setting.prnStart();
             callback.success();*/
-        callback.success("funziona");
+        callback.success(handler.isConnected());
     }
 }
