@@ -35,7 +35,7 @@ public class MathCalculator extends CordovaPlugin {
     }
     
     private void print(JSONArray args, CallbackContext callback) {
-        if(handler == null || setting == null) {
+        /*if(handler == null || setting == null) {
                 context = this.cordova.getActivity();
                 handler = MposHandler.getInstance(context);
                 setting = Settings.getInstance(handler);
@@ -43,6 +43,7 @@ public class MathCalculator extends CordovaPlugin {
             setting.mPosPowerOn();
             setting.prnStr("This class echoes a string called from JavaScript.");
             setting.prnStart();
-            callback.success();
+            callback.success();*/
+        callback.success("funziona");
     }
 }
