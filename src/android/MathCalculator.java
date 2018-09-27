@@ -56,7 +56,7 @@ public class MathCalculator extends CordovaPlugin {
             // error call
         }
         
-            setting.prnStr("This class echoes a string called from JavaScript.");
+            setting.prnStr("Ciao Orangini da HelloBeach!\n:)\n");
             setting.prnStart();
 
         callback.success(connect);
