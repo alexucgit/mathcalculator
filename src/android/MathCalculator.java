@@ -36,7 +36,7 @@ public class MathCalculator extends CordovaPlugin {
     
     private void print(JSONArray args, CallbackContext callback) {
         if(handler == null || setting == null) {
-                context = this.cordova.getActivity();
+                context = this.cordova.getActivity().getApplicationContext();
                 handler = MposHandler.getInstance(context);
                 setting = Settings.getInstance(handler);
            } 
