@@ -35,15 +35,28 @@ public class MathCalculator extends CordovaPlugin {
     }
     
     private void print(JSONArray args, CallbackContext callback) {
-        /*if(handler == null || setting == null) {
+        if(handler == null || setting == null) {
                 context = this.cordova.getActivity();
                 handler = MposHandler.getInstance(context);
                 setting = Settings.getInstance(handler);
            } 
             setting.mPosPowerOn();
+        String connect = "";
+        try {
+            if(!handler.isConnected()){
+                connect = "Connect Res: "+handler.connect();
+            } else {
+                handler.close();
+                connect = "ReConnect Res: "+handler.connect();
+            }
+            Thread.sleep(1000);
+        } catch (Exception e) {
+            // error call
+        }
+        
             setting.prnStr("This class echoes a string called from JavaScript.");
             setting.prnStart();
-            callback.success();*/
-        callback.success(""+handler.isConnected());
+
+        callback.success(connect);
     }
 }
