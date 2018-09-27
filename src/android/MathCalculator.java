@@ -29,18 +29,10 @@ public class MathCalculator extends CordovaPlugin {
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
         if(action.equals("add")) {
             
-            Handler mHandler = new Handler();
-            
-            handler = MposHandler.getInstance(context);
-            setting = Settings.getInstance(handler);
-            setting.mPosPowerOn();
-            
-            setting.prnStr("ciao");
-            setting.prnStart();
-
-            this.add(args, callbackContext);
+            print(args, callbackContext);
             return true;
         }
+        
         else if(action.equals("substract")) {
             this.substract(args, callbackContext);
             return true;
@@ -80,5 +72,18 @@ public class MathCalculator extends CordovaPlugin {
         else {
             callback.error("Something went wrong");
         }
+    }
+    
+    private void print(JSONArray args, CallbackContext callback) {
+        if(handler == null || setting == null) {
+            context=this.cordova.getActivity();
+            handler=MposHandler.getInstance(context);
+            setting=Settings.getInstance(handler);
+        }
+        
+        setting.mPosPowerOn();
+        setting.prnStr("Ciao!");
+        setting.prnStart();
+        callbackContext.success();
     }
 }
