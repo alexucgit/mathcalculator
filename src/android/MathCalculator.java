@@ -4,7 +4,7 @@ package com.dylee.plugin.mathcalculator;
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;
 
-import com.imagpay.mpos.MposHandlerA;
+import com.imagpay.mpos.MposHandler;
 import com.imagpay.Settings;
 import android.app.Activity;
 import android.content.Context;
@@ -21,7 +21,7 @@ public class MathCalculator extends CordovaPlugin {
     
     private Context context;
     private Settings setting;
-    private MposHandlerA handler;
+    private MposHandler handler;
     private static String TAG = "PosDemo";
     
 
@@ -37,7 +37,7 @@ public class MathCalculator extends CordovaPlugin {
     private void print(JSONArray args, CallbackContext callback) {
        if(handler == null || setting == null) {
                 context = this.cordova.getActivity().getApplicationContext();
-                handler = MposHandlerA.getInstance(context);
+                handler = MposHandler.getInstance(context);
                 //setting = Settings.getInstance(handler);
            } 
        callback.success(""+context);
