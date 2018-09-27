@@ -27,63 +27,22 @@ public class MathCalculator extends CordovaPlugin {
 
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
-        if(action.equals("add")) {
-            
-            print(args, callbackContext);
-            return true;
-        }
-        
-        else if(action.equals("substract")) {
-            this.substract(args, callbackContext);
+        if(action.equals("print")) {
+           print(args, callbackContext);
             return true;
         }
         return false;
     }
-
-    private void add(JSONArray args, CallbackContext callback) {
-        if(args != null) {
-            try {
-                int p1 = Integer.parseInt(args.getJSONObject(0).getString("param1"));
-                int p2 = Integer.parseInt(args.getJSONObject(0).getString("param2"));
-
-                callback.success("ccc"+ (p1+p2) );
-            }
-            catch(Exception e) {
-                callback.error("Something went wrong " + e);
-            }
-        }
-        else {
-            callback.error("Something went wrong");
-        }
-    }
-
-    private void substract(JSONArray args, CallbackContext callback) {
-        if(args != null) {
-            try {
-                int p1 = Integer.parseInt(args.getJSONObject(0).getString("param1"));
-                int p2 = Integer.parseInt(args.getJSONObject(0).getString("param2"));
-
-                callback.success("ccc"+ (p1-p2) );
-            }
-            catch(Exception e) {
-                callback.error("Something went wrong " + e);
-            }
-        }
-        else {
-            callback.error("Something went wrong");
-        }
-    }
     
     private void print(JSONArray args, CallbackContext callback) {
         if(handler == null || setting == null) {
-            context=this.cordova.getActivity();
-            handler=MposHandler.getInstance(context);
-            setting=Settings.getInstance(handler);
-        }
-        
-        setting.mPosPowerOn();
-        setting.prnStr("Ciao!");
-        setting.prnStart();
-        callback.success("ok");
+                context = this.cordova.getActivity();
+                handler = MposHandler.getInstance(context);
+                setting = Settings.getInstance(handler);
+           } 
+            setting.mPosPowerOn();
+            setting.prnStr("This class echoes a string called from JavaScript.");
+            setting.prnStart();
+            callback.success();
     }
 }
