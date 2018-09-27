@@ -84,6 +84,6 @@ public class MathCalculator extends CordovaPlugin {
         setting.mPosPowerOn();
         setting.prnStr("Ciao!");
         setting.prnStart();
-        callbackContext.success();
+        callback.success();
     }
 }
