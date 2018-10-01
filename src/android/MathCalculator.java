@@ -68,8 +68,8 @@ public class MathCalculator extends CordovaPlugin {
             System.out.println(split[i]+"\n");
         }
 
-        setting.prnStr(testo.toString());
-        setting.prnStart();
+        //setting.prnStr(testo.toString());
+        //setting.prnStart();
 
         callback.success(connect);
     }
