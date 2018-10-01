@@ -56,8 +56,9 @@ public class MathCalculator extends CordovaPlugin {
             // error call
         }
         
-            setting.prnStr(""+args);
-            setting.prnStart();
+        Log.println(args);
+            //setting.prnStr(""+args);
+            //setting.prnStart();
 
         callback.success(connect);
     }
