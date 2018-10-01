@@ -60,7 +60,7 @@ public class MathCalculator extends CordovaPlugin {
         }
         
         StringBuffer testo = new StringBuffer();
-        String[] split = args.split("\n");
+        String[] split = args.split("##");
         System.out.println("LUNGHEZZA: "+split.length);
         
         for (int i=0; i<split.length; i++) {
