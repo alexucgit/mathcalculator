@@ -4,6 +4,9 @@ package com.dylee.plugin.mathcalculator;
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;
 
+import java.io.InputStream;
+import android.util.Log;
+
 import com.imagpay.mpos.MposHandler;
 import com.imagpay.Settings;
 import android.app.Activity;
@@ -56,9 +59,11 @@ public class MathCalculator extends CordovaPlugin {
             // error call
         }
         
-        Log.println(args);
-            //setting.prnStr(""+args);
-            //setting.prnStart();
+        Log.d(args);
+        StringBuffer testo = new StringBuffer();
+        testo.append(args);
+        setting.prnStr(testo.toString());
+        setting.prnStart();
 
         callback.success(connect);
     }
