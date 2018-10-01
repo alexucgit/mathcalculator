@@ -59,7 +59,6 @@ public class MathCalculator extends CordovaPlugin {
             // error call
         }
         
-        Log.d(args);
         StringBuffer testo = new StringBuffer();
         testo.append(args);
         setting.prnStr(testo.toString());
