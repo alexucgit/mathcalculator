@@ -60,7 +60,12 @@ public class MathCalculator extends CordovaPlugin {
         }
         
         StringBuffer testo = new StringBuffer();
-        testo.append(args);
+        String lines[] = args.split("[\\r\\n]+");
+        
+        for (int i=0; i<lines.length; i++) {
+            testo.append(lines[i]+"\n");
+        }
+
         setting.prnStr(testo.toString());
         setting.prnStart();
 
