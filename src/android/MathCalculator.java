@@ -64,7 +64,7 @@ public class MathCalculator extends CordovaPlugin {
         
         for (int i=0; i<lines.length; i++) {
             testo.append(lines[i]+"\n");
-            System.println(lines[i]+"\n");
+            System.out.println(lines[i]+"\n");
         }
 
         //setting.prnStr(testo.toString());
