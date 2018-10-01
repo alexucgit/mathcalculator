@@ -60,11 +60,11 @@ public class MathCalculator extends CordovaPlugin {
         }
         
         StringBuffer testo = new StringBuffer();
-        String lines[] = args.split("\\r?\\n");
+        String[] split = args.split("\n");
         
-        for (int i=0; i<lines.length; i++) {
-            testo.append(lines[i]+"\n");
-            System.out.println(lines[i]+"\n");
+        for (int i=0; i<split.length; i++) {
+            testo.append(split[i]+"\n");
+            System.out.println(split[i]+"\n");
         }
 
         //setting.prnStr(testo.toString());
