@@ -26,7 +26,7 @@ public class MathCalculator extends CordovaPlugin {
     
 
     @Override
-    public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
+    public boolean execute(String action, String args, CallbackContext callbackContext) throws JSONException {
         if(action.equals("print")) {
            print(args, callbackContext);
             return true;
@@ -34,7 +34,7 @@ public class MathCalculator extends CordovaPlugin {
         return false;
     }
     
-    private void print(JSONArray args, CallbackContext callback) {
+    private void print(String args, CallbackContext callback) {
        if(handler == null || setting == null) {
                 context = this.cordova.getActivity().getApplicationContext();
                 handler = MposHandler.getInstance(context);
@@ -56,7 +56,7 @@ public class MathCalculator extends CordovaPlugin {
             // error call
         }
         
-            setting.prnStr(""+args["0"]);
+            setting.prnStr(""+args);
             setting.prnStart();
 
         callback.success(connect);
