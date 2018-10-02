@@ -66,7 +66,7 @@ public class MathCalculator extends CordovaPlugin {
                     setting.mPosPrintAlign(Settings.MPOS_PRINT_ALIGN_CENTER);
                     setting.mPosPrintTextSize(Settings.MPOS_PRINT_TEXT_DOUBLE_HEIGHT);
             setting.mPosPrnStr("HELLOBEACH");
-        setting.mPostPrintLn();
+        setting.mPosPrintLn();
         
                     setting.mPosPrintAlign(Settings.MPOS_PRINT_ALIGN_LEFT);
                     setting.mPosPrintTextSize(Settings.MPOS_PRINT_TEXT_NORMAL);
