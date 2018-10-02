@@ -1,6 +1,8 @@
 // package cordova.plugin.mathcalculator;
 package com.dylee.plugin.mathcalculator;
 
+/*
+
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;
 
@@ -24,6 +26,51 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
+*/
+
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.imagpay.Constants;
+import com.imagpay.PrnStrFormat;
+import com.imagpay.Settings;
+import com.imagpay.SwipeEvent;
+import com.imagpay.SwipeListener;
+import com.imagpay.enums.CardDetected;
+import com.imagpay.enums.EmvStatus;
+import com.imagpay.enums.PrintStatus;
+import com.imagpay.enums.PrnTextFont;
+import com.imagpay.mpos.MposHandler;
+import com.imagpay.utils.HCBoolean;
+import com.imagpay.utils.MessageDigestUtils;
+import com.zpos.demo.R;
+import com.zpos.ui.ImageInfo;
+import com.zpos.ui.MyPagerAdapter;
+import com.zxing.android.QRtestActivity;
+
+import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.os.Process;
+import android.support.v4.view.ViewPager;
+import android.support.v4.view.ViewPager.OnPageChangeListener;
+import android.text.Layout.Alignment;
+import android.util.Log;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
