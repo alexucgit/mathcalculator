@@ -49,6 +49,7 @@ import com.imagpay.enums.CardDetected;
 import com.imagpay.enums.EmvStatus;
 import com.imagpay.enums.PrintStatus;
 import com.imagpay.enums.PrnTextFont;
+import com.imagpay.enums.PrnTextStyle;
 import com.imagpay.mpos.MposHandler;
 import com.imagpay.utils.HCBoolean;
 import com.imagpay.utils.MessageDigestUtils;
