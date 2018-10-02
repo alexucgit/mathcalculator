@@ -85,7 +85,7 @@ public class MathCalculator extends CordovaPlugin {
             //setting.mPosPrnStr(split[split.length-1]+"\n");
 
             setting.prnStart();
-         }
+         
         
         callback.success(connect);
     }
