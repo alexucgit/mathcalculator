@@ -52,7 +52,6 @@ import com.imagpay.enums.PrnTextFont;
 import com.imagpay.mpos.MposHandler;
 import com.imagpay.utils.HCBoolean;
 import com.imagpay.utils.MessageDigestUtils;
-import com.zpos.ui.ImageInfo;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
