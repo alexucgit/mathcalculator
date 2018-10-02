@@ -30,6 +30,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 */
 
+import org.apache.cordova.CordovaPlugin;
+import org.apache.cordova.CallbackContext;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
@@ -46,10 +52,7 @@ import com.imagpay.enums.PrnTextFont;
 import com.imagpay.mpos.MposHandler;
 import com.imagpay.utils.HCBoolean;
 import com.imagpay.utils.MessageDigestUtils;
-import com.zpos.demo.R;
 import com.zpos.ui.ImageInfo;
-import com.zpos.ui.MyPagerAdapter;
-import com.zxing.android.QRtestActivity;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
