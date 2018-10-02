@@ -129,22 +129,22 @@ public class MathCalculator extends CordovaPlugin {
 	psf.setStyle(PrnTextStyle.BOLD);
 	psf.setAli(Alignment.ALIGN_CENTER);
 	psf.setTextSize(35);
-	setting.prnStr(split[0]+"\n", psf);
+	setting.prnStr(split[0], psf);
 	    
-	    
+	psf.setStyle(PrnTextStyle.NORMAL);
 	psf.setAli(Alignment.ALIGN_CENTER);
-	psf.setTextSize(25);
-	setting.prnStr(split[1]+"\n", psf);
+	psf.setTextSize(20);
+	setting.prnStr(split[1], psf);
 	
-	    
+	psf.setStyle(PrnTextStyle.NORMAL);
 	psf.setAli(Alignment.ALIGN_CENTER);
-	psf.setTextSize(25);
-	setting.prnStr(split[2]+"\n", psf);
+	psf.setTextSize(20);
+	setting.prnStr(split[2], psf);
 	    
 	
 	psf.setStyle(PrnTextStyle.BOLD);
 	psf.setAli(Alignment.ALIGN_CENTER);
-	psf.setTextSize(35);
+	psf.setTextSize(30);
 	setting.prnStr(split[3]+"\n", psf);
         
 	    /*
@@ -168,10 +168,15 @@ public class MathCalculator extends CordovaPlugin {
 
             //setting.mPosPrintAlign(Settings.MPOS_PRINT_ALIGN_LEFT);
 
-            for (int i=0; i<split.length-1; i++) {
+            for (int i=0; i<split.length-4; i++) {
                 //testo.append(split[i]+"\n");
                 System.out.println(i+": "+split[i]+"\n");
             }
+	    
+	psf.setStyle(PrnTextStyle.BOLD);
+	psf.setAli(Alignment.ALIGN_RIGHT);
+	psf.setTextSize(30);
+setting.prnStr(split[split.length-4]+" €\n", psf);
 
             //setting.prnStr(testo.toString());
             //setting.mPosPrintAlign(Settings.MPOS_PRINT_ALIGN_RIGHT);
