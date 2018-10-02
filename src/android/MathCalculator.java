@@ -53,9 +53,9 @@ public class MathCalculator extends CordovaPlugin {
                 handler = MposHandler.getInstance(context);
                 setting = Settings.getInstance(handler);
            } 
-       callback.success(""+context);
+        callback.success(""+context);
         
-            setting.mPosPowerOn();
+        setting.mPosPowerOn();
         String connect = "";
         try {
             if(!handler.isConnected()){
@@ -73,15 +73,15 @@ public class MathCalculator extends CordovaPlugin {
         String[] split = args.split("##");
         System.out.println("LUNGHEZZA: "+split.length);
         
-                    setting.mPosPrintFontSwitch(Settings.MPOS_PRINT_FONT_NEW);
-					// show print receipts
-					setting.mPosPrintAlign(Settings.MPOS_PRINT_ALIGN_CENTER);
-					setting.mPosPrintTextSize(Settings.MPOS_PRINT_TEXT_DOUBLE_HEIGHT);
-					setting.mPosPrnStr("POS Signed Order");
-					setting.mPosPrintLn();
+    	setting.mPosPrintFontSwitch(Settings.MPOS_PRINT_FONT_NEW);
+	// show print receipts
+	setting.mPosPrintAlign(Settings.MPOS_PRINT_ALIGN_CENTER);
+	setting.mPosPrintTextSize(Settings.MPOS_PRINT_TEXT_DOUBLE_HEIGHT);
+	setting.mPosPrnStr("POS Signed Order");
+	setting.mPosPrintLn();
         
-                    setting.mPosPrintAlign(Settings.MPOS_PRINT_ALIGN_LEFT);
-                    setting.mPosPrintTextSize(Settings.MPOS_PRINT_TEXT_NORMAL);
+        setting.mPosPrintAlign(Settings.MPOS_PRINT_ALIGN_LEFT);
+        setting.mPosPrintTextSize(Settings.MPOS_PRINT_TEXT_NORMAL);
             
             //setting.mPosPrintAlign(Settings.MPOS_PRINT_ALIGN_CENTER);
             //setting.mPosPrintTextSize(Settings.MPOS_PRINT_TEXT_DOUBLE_SIZE);
@@ -99,7 +99,7 @@ public class MathCalculator extends CordovaPlugin {
                 System.out.println(split[i]+"\n");
             }*/
 
-            setting.prnStr(testo.toString());
+            //setting.prnStr(testo.toString());
             //setting.mPosPrintAlign(Settings.MPOS_PRINT_ALIGN_RIGHT);
             //setting.mPosPrintTextSize(Settings.MPOS_PRINT_TEXT_DOUBLE_HEIGHT);
             //setting.mPosPrnStr(split[split.length-1]+"\n");
