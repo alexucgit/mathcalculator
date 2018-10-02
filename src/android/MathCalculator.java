@@ -124,11 +124,28 @@ public class MathCalculator extends CordovaPlugin {
         System.out.println("LUNGHEZZA: "+split.length);
 	    
 	PrnStrFormat psf = new PrnStrFormat();
-	psf.setFont(PrnTextFont.MONOSPACE);
+	//psf.setFont(PrnTextFont.MONOSPACE);
+	    
 	psf.setStyle(PrnTextStyle.BOLD);
 	psf.setAli(Alignment.ALIGN_CENTER);
-	psf.setTextSize(24);
-	setting.prnStr("HELLOBEACH\n\n\n", psf);
+	psf.setTextSize(35);
+	setting.prnStr(split[0]+"\n", psf);
+	    
+	    
+	psf.setAli(Alignment.ALIGN_CENTER);
+	psf.setTextSize(25);
+	setting.prnStr(split[1]+"\n", psf);
+	
+	    
+	psf.setAli(Alignment.ALIGN_CENTER);
+	psf.setTextSize(25);
+	setting.prnStr(split[2]+"\n", psf);
+	    
+	
+	psf.setStyle(PrnTextStyle.BOLD);
+	psf.setAli(Alignment.ALIGN_CENTER);
+	psf.setTextSize(35);
+	setting.prnStr(split[3]+"\n", psf);
         
 	    /*
     	setting.mPosPrintFontSwitch(Settings.MPOS_PRINT_FONT_NEW);
@@ -138,8 +155,7 @@ public class MathCalculator extends CordovaPlugin {
 	setting.mPosPrnStr("POS Signed Order");
 	setting.mPosPrintLn();*/
         
-        setting.mPosPrintAlign(Settings.MPOS_PRINT_ALIGN_LEFT);
-        setting.mPosPrintTextSize(Settings.MPOS_PRINT_TEXT_NORMAL);
+
             
             //setting.mPosPrintAlign(Settings.MPOS_PRINT_ALIGN_CENTER);
             //setting.mPosPrintTextSize(Settings.MPOS_PRINT_TEXT_DOUBLE_SIZE);
