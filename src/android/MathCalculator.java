@@ -128,7 +128,7 @@ public class MathCalculator extends CordovaPlugin {
 	psf.setStyle(PrnTextStyle.BOLD);
 	psf.setAly(Alignment.ALIGN_CENTER);
 	psf.setTextSize(24);
-	setting.prnStr("HELLOBEACH", psf);
+	setting.prnStr("HELLOBEACH\n\n\n", psf);
         
 	    /*
     	setting.mPosPrintFontSwitch(Settings.MPOS_PRINT_FONT_NEW);
