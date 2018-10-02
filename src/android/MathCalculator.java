@@ -152,10 +152,10 @@ public class MathCalculator extends CordovaPlugin {
 
             //setting.mPosPrintAlign(Settings.MPOS_PRINT_ALIGN_LEFT);
 
-            /*for (int i=0; i<split.length-1; i++) {
-                testo.append(split[i]+"\n");
-                System.out.println(split[i]+"\n");
-            }*/
+            for (int i=0; i<split.length-1; i++) {
+                //testo.append(split[i]+"\n");
+                System.out.println(i+": "+split[i]+"\n");
+            }
 
             //setting.prnStr(testo.toString());
             //setting.mPosPrintAlign(Settings.MPOS_PRINT_ALIGN_RIGHT);
