@@ -169,14 +169,20 @@ public class MathCalculator extends CordovaPlugin {
             //setting.mPosPrintAlign(Settings.MPOS_PRINT_ALIGN_LEFT);
 
             for (int i=0; i<split.length-4; i++) {
-                //testo.append(split[i]+"\n");
+                testo.append(split[i]+"\n");
                 System.out.println(i+": "+split[i]+"\n");
             }
 	    
+	psf.setStyle(PrnTextStyle.NORMAL);
+	psf.setAli(Alignment.ALIGN_CENTER);
+	psf.setTextSize(25);
+	setting.prnStr(testo.toString(), psf);
+	    
+	    
 	psf.setStyle(PrnTextStyle.BOLD);
 	psf.setAli(Alignment.ALIGN_OPPOSITE);
-	psf.setTextSize(30);
-setting.prnStr(split[split.length-4]+" €\n", psf);
+	psf.setTextSize(35);
+	setting.prnStr(split[split.length-4]+" €\n\n\n", psf);
 
             //setting.prnStr(testo.toString());
             //setting.mPosPrintAlign(Settings.MPOS_PRINT_ALIGN_RIGHT);
