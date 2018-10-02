@@ -66,6 +66,7 @@ public class MathCalculator extends CordovaPlugin {
                     setting.mPosPrintAlign(Settings.MPOS_PRINT_ALIGN_CENTER);
                     setting.mPosPrintTextSize(Settings.MPOS_PRINT_TEXT_DOUBLE_HEIGHT);
             setting.mPosPrnStr("HELLOBEACH");
+        setting.mPostPrintLn();
         
                     setting.mPosPrintAlign(Settings.MPOS_PRINT_ALIGN_LEFT);
                     setting.mPosPrintTextSize(Settings.MPOS_PRINT_TEXT_NORMAL);
@@ -81,10 +82,10 @@ public class MathCalculator extends CordovaPlugin {
 
             //setting.mPosPrintAlign(Settings.MPOS_PRINT_ALIGN_LEFT);
 
-            for (int i=0; i<split.length-1; i++) {
+            /*for (int i=0; i<split.length-1; i++) {
                 testo.append(split[i]+"\n");
                 System.out.println(split[i]+"\n");
-            }
+            }*/
 
             setting.prnStr(testo.toString());
             //setting.mPosPrintAlign(Settings.MPOS_PRINT_ALIGN_RIGHT);
