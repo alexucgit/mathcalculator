@@ -63,32 +63,32 @@ public class MathCalculator extends CordovaPlugin {
         String[] split = args.split("##");
         System.out.println("LUNGHEZZA: "+split.length);
         
+        if(split.length>0){
+            
+            setting.mPosPrintAlign(Settings.MPOS_PRINT_ALIGN_CENTER);
+            setting.mPosPrintTextSize(Settings.MPOS_PRINT_TEXT_DOUBLE_SIZE);
+            setting.mPosPrnStr(split[0]+"\n");
 
-                    setting.mPosPrintAlign(Settings.MPOS_PRINT_ALIGN_CENTER);
-                    setting.mPosPrintTextSize(Settings.MPOS_PRINT_TEXT_DOUBLE_SIZE);
-                    setting.mPosPrnStr(split[0]+"\n");
+            setting.mPosPrintAlign(Settings.MPOS_PRINT_ALIGN_CENTER);
+            setting.mPosPrintTextSize(Settings.MPOS_PRINT_TEXT_NORMAL);
+            setting.mPosPrnStr(split[1]+"\n");
+            setting.mPosPrnStr(split[2]+"\n");
 
-                    setting.mPosPrintAlign(Settings.MPOS_PRINT_ALIGN_CENTER);
-                    setting.mPosPrintTextSize(Settings.MPOS_PRINT_TEXT_NORMAL);
-                    setting.mPosPrnStr(split[1]+"\n");
-                    setting.mPosPrnStr(split[2]+"\n");
+            setting.mPosPrintAlign(Settings.MPOS_PRINT_ALIGN_LEFT);
 
-                    setting.mPosPrintAlign(Settings.MPOS_PRINT_ALIGN_LEFT);
+            for (int i=3; i<split.length-1; i++) {
+                testo.append(split[i]+"\n");
+                System.out.println(split[i]+"\n");
+            }
 
+            setting.prnStr(testo.toString());
+            setting.mPosPrintAlign(Settings.MPOS_PRINT_ALIGN_RIGHT);
+            setting.mPosPrintTextSize(Settings.MPOS_PRINT_TEXT_DOUBLE_HEIGHT);
+            setting.mPosPrnStr(split[split.length-1]+"\n");
 
-        
-        for (int i=3; i<split.length-1; i++) {
-            testo.append(split[i]+"\n");
-            System.out.println(split[i]+"\n");
+            setting.prnStart();
         }
-
-        setting.prnStr(testo.toString());
-        setting.mPosPrintAlign(Settings.MPOS_PRINT_ALIGN_RIGHT);
-        setting.mPosPrintTextSize(Settings.MPOS_PRINT_TEXT_DOUBLE_HEIGHT);
-        setting.mPosPrnStr(split[split.length-1]+"\n");
         
-        setting.prnStart();
-
         callback.success(connect);
     }
 }
