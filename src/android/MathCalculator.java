@@ -174,7 +174,7 @@ public class MathCalculator extends CordovaPlugin {
             }
 	    
 	psf.setStyle(PrnTextStyle.BOLD);
-	psf.setAli(Alignment.ALIGN_RIGHT);
+	psf.setAli(Alignment.ALIGN_OPPOSITE);
 	psf.setTextSize(30);
 setting.prnStr(split[split.length-4]+" €\n", psf);
 
