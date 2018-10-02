@@ -63,17 +63,19 @@ public class MathCalculator extends CordovaPlugin {
         String[] split = args.split("##");
         System.out.println("LUNGHEZZA: "+split.length);
         
-        for (int y=0; y<3; y++){
-            if(y==0){
+
                     setting.mPosPrintAlign(Settings.MPOS_PRINT_ALIGN_CENTER);
-                    setting.mPosPrintTextSize(Settings.MPOS_PRINT_TEXT_DOUBLE_HEIGHT);
-                    setting.mPosPrnStr(split[y]+"\n");
-            } else {
+                    setting.mPosPrintTextSize(Settings.MPOS_PRINT_TEXT_DOUBLE_SIZE);
+                    setting.mPosPrnStr(split[0]+"\n");
+
                     setting.mPosPrintAlign(Settings.MPOS_PRINT_ALIGN_CENTER);
-                    setting.mPosPrnStr(split[y]+"\n");
-                    
-            }
-        }
+                    setting.mPosPrintTextSize(Settings.MPOS_PRINT_TEXT_NORMAL);
+                    setting.mPosPrnStr(split[1]+"\n");
+                    setting.mPosPrnStr(split[2]+"\n");
+
+                    setting.mPosPrintAlign(Settings.MPOS_PRINT_ALIGN_LEFT);
+
+
         
         for (int i=3; i<split.length-1; i++) {
             testo.append(split[i]+"\n");
