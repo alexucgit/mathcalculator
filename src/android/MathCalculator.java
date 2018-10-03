@@ -192,12 +192,12 @@ public class MathCalculator extends CordovaPlugin {
 	psf.setStyle(PrnTextStyle.BOLD);
 	psf.setAli(Alignment.ALIGN_OPPOSITE);
 	psf.setTextSize(40);
-	setting.prnStr(split[split.length-4]+" €\n\n\n", psf);
+	setting.prnStr(split[split.length-4]+" €\n", psf);
 				       
 	psf.setStyle(PrnTextStyle.BOLD);
 	psf.setAli(Alignment.ALIGN_CENTER);
-	psf.setTextSize(30);
-	setting.prnStr("STAMPATO DA HELLOBEACH\n\n", psf);
+	psf.setTextSize(25);
+	setting.prnStr("BUON RELAX DA HELLOBEACH\n\n", psf);
 	    
 
             //setting.prnStr(testo.toString());
