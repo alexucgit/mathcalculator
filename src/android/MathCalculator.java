@@ -129,23 +129,27 @@ public class MathCalculator extends CordovaPlugin {
 	psf.setStyle(PrnTextStyle.BOLD);
 	psf.setAli(Alignment.ALIGN_CENTER);
 	psf.setTextSize(40);
-	setting.prnStr(split[0].replace("\"", ""), psf);
+//	setting.prnStr(split[0].replace("\"", ""), psf);
+	    System.out.println("0: "+split[0]+"\n");
 	    
 	psf.setStyle(PrnTextStyle.NORMAL);
 	psf.setAli(Alignment.ALIGN_CENTER);
 	psf.setTextSize(20);
-	setting.prnStr(split[1], psf);
+//	setting.prnStr(split[1], psf);
+	    System.out.println("1: "+split[1]+"\n");
 	
 	psf.setStyle(PrnTextStyle.NORMAL);
 	psf.setAli(Alignment.ALIGN_CENTER);
 	psf.setTextSize(20);
-	setting.prnStr(split[2], psf);
+//	setting.prnStr(split[2], psf);
+	    System.out.println("2: "+split[2]+"\n");
 	    
 	
 	psf.setStyle(PrnTextStyle.BOLD);
 	psf.setAli(Alignment.ALIGN_CENTER);
 	psf.setTextSize(30);
-	setting.prnStr(split[3]+"\n", psf);
+//	setting.prnStr(split[3]+"\n", psf);
+	    System.out.println("3: "+split[3]+"\n");
         
 	    /*
     	setting.mPosPrintFontSwitch(Settings.MPOS_PRINT_FONT_NEW);
@@ -172,8 +176,12 @@ public class MathCalculator extends CordovaPlugin {
 		if(i==split.length-7){
 			if(split[split.length-6]!=""){
 				testo.append("\n************** NOTE **************\n");
+				System.out.println((split.length-5)+": "+split[split.length-5]+"\n");
 				testo.append(split[split.length-6]+"\n");
-				testo.append(split[split.length-5]+"\n");
+				System.out.println((split.length-6)+": "+split[split.length-6]+"\n");
+				//testo.append(split[split.length-5]+"\n");
+				//System.out.println((split.length-5)+": "+split[split.length-5]+"\n");
+
 			}
 		}
 		if(i<split.length-7){
@@ -186,26 +194,29 @@ public class MathCalculator extends CordovaPlugin {
 	psf.setStyle(PrnTextStyle.NORMAL);
 	psf.setAli(Alignment.ALIGN_NORMAL);
 	psf.setTextSize(25);
-	setting.prnStr(testo.toString(), psf);
+//	setting.prnStr(testo.toString(), psf);
 	    
 	    
 	psf.setStyle(PrnTextStyle.BOLD);
 	psf.setAli(Alignment.ALIGN_OPPOSITE);
 	psf.setTextSize(40);
-	setting.prnStr(split[split.length-4]+" €\n", psf);
+//	setting.prnStr(split[split.length-4]+" €\n", psf);
+	System.out.println((split.length-4)+": "+split[split.length-4]+"\n");
+
 				       
 	psf.setStyle(PrnTextStyle.BOLD);
 	psf.setAli(Alignment.ALIGN_CENTER);
 	psf.setTextSize(25);
-	setting.prnStr("BUON RELAX DA HELLOBEACH\n#PLAYYOURSUMMER\n\n\n", psf);
-	    
+//	setting.prnStr("BUON RELAX DA HELLOBEACH\n#PLAYYOURSUMMER\n\n\n", psf);
+	System.out.println("BUON RELAX");
+
 
             //setting.prnStr(testo.toString());
             //setting.mPosPrintAlign(Settings.MPOS_PRINT_ALIGN_RIGHT);
             //setting.mPosPrintTextSize(Settings.MPOS_PRINT_TEXT_DOUBLE_HEIGHT);
             //setting.mPosPrnStr(split[split.length-1]+"\n");
 
-            setting.prnStart();
+//            setting.prnStart();
          
         
         callback.success(connect);
