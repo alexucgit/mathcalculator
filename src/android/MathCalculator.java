@@ -168,9 +168,17 @@ public class MathCalculator extends CordovaPlugin {
 
             //setting.mPosPrintAlign(Settings.MPOS_PRINT_ALIGN_LEFT);
 
-   /*         for (int i=4; i<split.length-4; i++) {
+            for (int i=4; i<split.length-6; i++) {
+		if(i==split.length-7){
+			if(split[split.length-5]!=''){
+				testo.append("********** NOTE **********\n");
+				testo.append(split[split.length-5]+"\n");
+			}
+		}
+
                 testo.append(split[i]+"\n");
                 System.out.println(i+": "+split[i]+"\n");
+		    
             }
 	    
 	psf.setStyle(PrnTextStyle.NORMAL);
@@ -182,7 +190,7 @@ public class MathCalculator extends CordovaPlugin {
 	psf.setStyle(PrnTextStyle.BOLD);
 	psf.setAli(Alignment.ALIGN_OPPOSITE);
 	psf.setTextSize(40);
-	setting.prnStr(split[split.length-4]+" €\n\n\n", psf);					*/
+	setting.prnStr(split[split.length-4]+" €\n\n\n", psf);					
 
             //setting.prnStr(testo.toString());
             //setting.mPosPrintAlign(Settings.MPOS_PRINT_ALIGN_RIGHT);
