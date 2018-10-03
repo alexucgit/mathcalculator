@@ -129,7 +129,7 @@ public class MathCalculator extends CordovaPlugin {
 	psf.setStyle(PrnTextStyle.BOLD);
 	psf.setAli(Alignment.ALIGN_CENTER);
 	psf.setTextSize(40);
-	setting.prnStr(split[0], psf);
+	setting.prnStr(split[0]replace(""", ""), psf);
 	    
 	psf.setStyle(PrnTextStyle.NORMAL);
 	psf.setAli(Alignment.ALIGN_CENTER);
@@ -192,7 +192,13 @@ public class MathCalculator extends CordovaPlugin {
 	psf.setStyle(PrnTextStyle.BOLD);
 	psf.setAli(Alignment.ALIGN_OPPOSITE);
 	psf.setTextSize(40);
-	setting.prnStr(split[split.length-4]+" €\n\n\n", psf);					
+	setting.prnStr(split[split.length-4]+" €\n\n\n", psf);
+				       
+	psf.setStyle(PrnTextStyle.BOLD);
+	psf.setAli(Alignment.ALIGN_CENTER);
+	psf.setTextSize(30);
+	setting.prnStr("STAMPATO DA HELLOBEACH\n\n", psf);
+	    
 
             //setting.prnStr(testo.toString());
             //setting.mPosPrintAlign(Settings.MPOS_PRINT_ALIGN_RIGHT);
