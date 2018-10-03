@@ -174,7 +174,7 @@ public class MathCalculator extends CordovaPlugin {
 
             for (int i=4; i<split.length-6; i++) {
 		if(i==split.length-7){
-			if(split[split.length-6]!=""){
+			if(!"".equalsIgnoreCase(split[split.length-5])){
 				testo.append("\n************** NOTE **************\n");
 				System.out.println((split.length-5)+": "+split[split.length-5]+"\n");
 				testo.append(split[split.length-6]+"\n");
