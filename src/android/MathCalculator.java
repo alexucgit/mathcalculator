@@ -170,8 +170,8 @@ public class MathCalculator extends CordovaPlugin {
 
             for (int i=4; i<split.length-6; i++) {
 		if(i==split.length-7){
-			if(split[split.length-5]!=''){
-				testo.append("********** NOTE **********\n");
+			if(split[split.length-5]!=""){
+				testo.append("************* NOTE *************\n");
 				testo.append(split[split.length-5]+"\n");
 			}
 		}
