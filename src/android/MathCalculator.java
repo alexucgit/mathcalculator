@@ -129,7 +129,7 @@ public class MathCalculator extends CordovaPlugin {
 	psf.setStyle(PrnTextStyle.BOLD);
 	psf.setAli(Alignment.ALIGN_CENTER);
 	psf.setTextSize(40);
-	setting.prnStr(split[0]replace(""", ""), psf);
+	setting.prnStr(split[0]replace("\"", ""), psf);
 	    
 	psf.setStyle(PrnTextStyle.NORMAL);
 	psf.setAli(Alignment.ALIGN_CENTER);
