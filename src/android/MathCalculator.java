@@ -119,14 +119,14 @@ public class MathCalculator extends CordovaPlugin {
             // error call
         }
         
-        StringBuffer testo = new StringBuffer();
-        String[] split = args.split("##");
-        System.out.println("LUNGHEZZA: "+split.length);
+//        StringBuffer testo = new StringBuffer();
+//        String[] split = args.split("##");
+//        System.out.println("LUNGHEZZA: "+split.length);
 	    
 	PrnStrFormat psf = new PrnStrFormat();
 	//psf.setFont(PrnTextFont.MONOSPACE);
 	    
-	psf.setStyle(PrnTextStyle.BOLD);
+/*	psf.setStyle(PrnTextStyle.BOLD);
 	psf.setAli(Alignment.ALIGN_CENTER);
 	psf.setTextSize(40);
 	setting.prnStr(split[0].replace("\"", ""), psf);
@@ -172,7 +172,7 @@ public class MathCalculator extends CordovaPlugin {
 
             //setting.mPosPrintAlign(Settings.MPOS_PRINT_ALIGN_LEFT);
 
-            for (int i=4; i<split.length-6; i++) {
+   /*         for (int i=4; i<split.length-6; i++) {
 		if(i==split.length-7){
 			if(!"".equalsIgnoreCase(split[split.length-6])){
 				testo.append("\n************** NOTE **************\n");
@@ -198,7 +198,7 @@ public class MathCalculator extends CordovaPlugin {
 	psf.setTextSize(40);
 	setting.prnStr(split[split.length-4]+" €\n", psf);
 	System.out.println((split.length-4)+": "+split[split.length-4]+"\n");
-
+*/
 				       
 	psf.setStyle(PrnTextStyle.BOLD);
 	psf.setAli(Alignment.ALIGN_CENTER);
